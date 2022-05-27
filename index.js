@@ -12,7 +12,7 @@ const team = [];
 const buildTeam = () => {
   fs.writeFileSync(
     path.join(__dirname, "/dist/", "team.html"),
-    generateHtml(),
+    generateHtml(team),
     "utf8"
   );
 };
@@ -84,7 +84,7 @@ const addEmployee = () => {
       type: "list",
       message: "Would you like to add another Employee",
       name: "direction",
-      choices: ["Engineer", "Intern", "Build Team"],
+      choices: ["Engineer", "Intern", "Finish Building Team"],
     })
     .then((answers) => {
       if (answers.direction === "Engineer") {
@@ -92,7 +92,7 @@ const addEmployee = () => {
       } else if (answers.direction === "Intern") {
         promptIntern();
       } else {
-        console.log(team);
+        // console.log(team);
         buildTeam();
       }
     });
