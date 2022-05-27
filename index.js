@@ -159,65 +159,65 @@ const promptEngineer = () => {
     });
 };
 
-// const promptEngineer = () => {
-//   inquirer
-//     .prompt([
-//       {
-//         type: "text", // change to input
-//         name: "name",
-//         message: "Please enter Engineer name",
-//         validate: (answer) => {
-//           if (answer) {
-//             return true;
-//           }
-//           return "Please enter valid name";
-//         },
-//       },
-//       {
-//         type: "input",
-//         name: "id",
-//         message: "Please enter Engineer Id",
-//         validate: (answer) => {
-//           const pass = answer.match(/^[1-9]\d*$/); //regex
-//           if (pass) {
-//             return true;
-//           }
-//           return "Please enter a valid number";
-//         },
-//       },
-//       {
-//         type: "text",
-//         name: "email",
-//         message: "Please enter Engineer email address",
-//         validate: (answer) => {
-//           if (answer) {
-//             return true;
-//           }
-//           return "Please enter valid email address";
-//         },
-//       },
-//       {
-//         type: "input",
-//         name: "github",
-//         message: "Please enter Engineer github",
-//         validate: (answer) => {
-//           if (answer) {
-//             return true;
-//           }
-//           return "Please enter valid email github";
-//         },
-//       },
-//     ])
-//     .then((engineerObj) => {
-//       const engineer = new Engineer(
-//         engineerObj.name,
-//         engineerObj.id,
-//         engineerObj.email,
-//         engineerObj.github
-//       );
-//       team.push(engineer);
-//       addEmployee();
-//     });
-// };
+const promptIntern = () => {
+  inquirer
+    .prompt([
+      {
+        type: "text", // change to input
+        name: "name",
+        message: "Please enter Intern name",
+        validate: (answer) => {
+          if (answer) {
+            return true;
+          }
+          return "Please enter valid name";
+        },
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Please enter Intern Id",
+        validate: (answer) => {
+          const pass = answer.match(/^[1-9]\d*$/); //regex
+          if (pass) {
+            return true;
+          }
+          return "Please enter a valid number";
+        },
+      },
+      {
+        type: "text",
+        name: "email",
+        message: "Please enter Intern email address",
+        validate: (answer) => {
+          if (answer) {
+            return true;
+          }
+          return "Please enter valid email address";
+        },
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "Please enter Intern School",
+        validate: (answer) => {
+          if (answer) {
+            return true;
+          }
+          return "Please enter valid school";
+        },
+      },
+    ])
+    .then((internObj) => {
+      const intern = new Intern(
+        internObj.name,
+        internObj.id,
+        internObj.email,
+        internObj.school
+      );
+      team.push(intern);
+      addEmployee();
+    });
+};
 
 promptManager();
