@@ -15,6 +15,7 @@ const buildTeam = () => {
     generateHtml(team),
     "utf8"
   );
+  console.log("File created! Check your dist folder for team.html");
 };
 
 const promptManager = () => {
