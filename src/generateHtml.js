@@ -1,13 +1,5 @@
 const Employee = require("../lib/Employee");
 
-// filter/run getRole(team)
-// // if manager, create managerArr.
-// // if engineer, create engineerArr.
-// // if intern, create internArr.
-
-// make bootstrap card for each employee.
-//create card, put in html string
-
 const renderCards = (team) => {
   var cardArr = [];
 
@@ -36,25 +28,26 @@ const renderManagerCard = (managerInfo) => {
     return "";
   }
   return `
-    <section class="mgr-info text-white .col-md-4 .col-md-offset-4">
-      <div class="card mgr-card border-danger text-center" style="width: 18rem"> 
+    <section class="text-white .col-md-4 .col-md-offset-4">
+
+      <div class="card text-bg-dark mb-3" style="max-width: 18rem;"> 
         <ul class="list-group list-group-flush">
 
-          <li class="list-group-item bg-primary">
-            <i class="fas fa-mug-hot"></i> MANAGER <br>
+          <li class="list-group-item text-center bg-info">
+            <i class="fas fa-mug-hot"></i> Manager <br>
             ${managerInfo.name}
            </li>
 
-          <li class="list-group-item bg-dark">
-            Office Number : ${managerInfo.officeNumber}
-          </li>
-
-          <li class="list-group-item bg-dark">
+          <li class="list-group-item text-left text-light bg-dark">
             Employee id: ${managerInfo.id}
           </li>
 
-          <li class="list-group-item bg-dark">
-            Email : ${managerInfo.email}
+          <li class="list-group-item text-left text-light bg-dark">
+            Email: <a class="text-light text-decoration-none" href="mailto:${managerInfo.email}"> ${managerInfo.email} </a>
+          </li>
+
+          <li class="list-group-item text-left text-light bg-dark">
+            Office Number : ${managerInfo.officeNumber}
           </li>
 
         </ul>
@@ -68,25 +61,26 @@ const renderEngineerCard = (engineerInfo) => {
     return "";
   }
   return `
-    <section class="engr-info text-white .col-md-4 .col-md-offset-4">
-      <div class="card engr-card border-danger text-center" style="width: 18rem"> 
+    <section class="text-white .col-md-4 .col-md-offset-4">
+
+      <div class="card text-bg-dark mb-3" style="max-width: 18rem;">  
         <ul class="list-group list-group-flush">
 
-          <li class="list-group-item bg-primary">
-            <i class="fas-solid fas-glasses-round"></i> ENGINEER <br>
+          <li class="list-group-item text-center bg-info">
+            <i class="fas fa-mug-hot"></i> Engineer <br>
             ${engineerInfo.name}
            </li>
 
-          <li class="list-group-item bg-dark">
-            Office Number : ${engineerInfo.github}
+          <li class="list-group-item text-left text-light bg-dark">
+            Employee ID: ${engineerInfo.id}
           </li>
 
-          <li class="list-group-item bg-dark">
-            Employee id: ${engineerInfo.id}
+          <li class="list-group-item text-left text-light bg-dark">
+            Email: <a class="text-light text-decoration-none" href="mailto:${engineerInfo.email}"> ${engineerInfo.email} </a>
           </li>
 
-          <li class="list-group-item bg-dark">
-            Email : ${engineerInfo.email}
+          <li class="list-group-item text-left text-light bg-dark">
+            GitHub: <a class="text-light text-decoration-none" href="https://github.com/${engineerInfo.github}"> ${engineerInfo.github} </a>
           </li>
 
         </ul>
@@ -100,25 +94,27 @@ const renderInternCard = (internInfo) => {
     return "";
   }
   return `
-    <section class="engr-info text-white .col-md-4 .col-md-offset-4">
-      <div class="card engr-card border-danger text-center" style="width: 18rem"> 
+    <section class="text-white .col-md-4 .col-md-offset-4">
+
+      <div class="card text-bg-dark mb-3" style="max-width: 18rem;"> 
+
         <ul class="list-group list-group-flush">
 
-          <li class="list-group-item bg-primary">
-            <i class="fa-solid fa-graduation-cap"></i> INTERN <br>
+          <li class="list-group-item text-center bg-info">
+            <i class="fas fa-mug-hot"></i> Intern <br>
             ${internInfo.name}
            </li>
 
-          <li class="list-group-item bg-dark">
-            Office Number : ${internInfo.school}
+          <li class="list-group-item text-left text-light bg-dark">
+            Employee ID: ${internInfo.id}
           </li>
 
-          <li class="list-group-item bg-dark">
-            Employee id: ${internInfo.id}
+          <li class="list-group-item text-left text-light bg-dark">
+            Email: <a class="text-light text-decoration-none" href="mailto:${internInfo.email}"> ${internInfo.email} </a>
           </li>
-
-          <li class="list-group-item bg-dark">
-            Email : ${internInfo.email}
+          
+          <li class="list-group-item text-left text-light bg-dark">
+            School: ${internInfo.school}
           </li>
 
         </ul>
@@ -128,8 +124,6 @@ const renderInternCard = (internInfo) => {
 };
 
 module.exports = function (team) {
-  console.log(team);
-
   return `
     <!DOCTYPE html> 
     <html lang="en"> 
@@ -138,16 +132,15 @@ module.exports = function (team) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Portfolio Demo</title>
+        <title>Team Builder</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
 
     <body>
       <header>
         <div class="container flex-row justify-space-between align-center py-3">
-          <h1 class="page-title text-secondary bg-dark py-2 px-3">Team Builder</h1>  
+          <h1 class="page-title text-center text-light bg-dark py-2 px-3">Team Builder</h1>  
         </div>  
       </header>  
 
@@ -158,6 +151,7 @@ module.exports = function (team) {
       <footer class="container text-center py-3">
         <h3 class="text-dark">&copy ${new Date().getFullYear()}</h3>
       </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
     </html>
   `;
