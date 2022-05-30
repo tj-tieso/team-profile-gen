@@ -2,47 +2,51 @@
 
 Week 10. Object-Oriented Programming Challenge
 
-https://courses.bootcampspot.com/courses/1256/assignments/24692?module_item_id=494199
+## Project Description
 
-## User Story
+This application will help you generate contact cards for you Team.
 
-AS A manager
+## Table of Contents
 
-- I WANT to generate a webpage that displays my team's basic info
-- SO THAT I have quick access to their emails and GitHub profiles
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributors](#contributors)
+- [Contact](#contact)
 
-## Acceptance Criteria
+## Installation
 
-GIVEN a command-line application that accepts user input
+Use npm to install the following dependencies from your terminal.
 
-WHEN I am prompted for my team members and their information
+```bash
+npm install inquirer
+```
 
-- THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+```bash
+npm install bootstrap
+```
 
-WHEN I click on an email address in the HTML
+## Usage
 
-- THEN my default email program opens and populates the TO field of the email with the address
+1. After installing dependencies run the following command in your terminal.
 
-WHEN I click on the GitHub username
+   ```bash
+   node index
+   ```
 
-- THEN that GitHub profile opens in a new tab
+2. The application will walk you through a set of questions for your Team.
 
-WHEN I start the application
+3. After filling out the list of questions, find your shiny new Team Profile in the dist folder!
 
-- THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
+   - right click on `team.html` and select View in Browser.
 
-WHEN I enter the team manager’s name, employee ID, email address, and office number
+## Tests
 
-- THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+[Walkthrough Video](https://drive.google.com/file/d/1QX2YJYpmYaJB34X4gV_1aiimztPRyCsC/view)
 
-WHEN I select the engineer option
+## Contributors
 
-- THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+Forged in 🔥🔥🔥 by your Dread Lord and Master Trev(or)
 
-WHEN I select the intern option
+#### Questions? Contact me at:
 
-- THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-
-WHEN I decide to finish building my team
-
-- THEN I exit the application, and the HTML is generated
+tj.tieso@gmail.com
